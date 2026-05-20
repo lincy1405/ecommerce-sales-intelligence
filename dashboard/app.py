@@ -16,7 +16,7 @@ st.set_page_config(
 # ── LOAD DATA ────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Users\Lincy\OneDrive\Desktop\ecommerce-sales-intelligence\data\cleaned\online_retail_clean.csv')
+    df = pd.read_csv('dashboard/data_sample.csv')
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     df['YearMonth'] = df['InvoiceDate'].dt.strftime('%Y-%m')
     df['DayOfWeek'] = df['InvoiceDate'].dt.day_name()
